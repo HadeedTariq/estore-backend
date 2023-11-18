@@ -7,7 +7,13 @@ config();
 connectToDb();
 const PORT = process.env.PORT || 3000;
 const app = express();
-app.use(cors({ origin: [process.env.CLIENT_URL, "http://localhost:4173"] }));
+app.use(
+  cors({
+    origin: [process.env.CLIENT_URL, "http://localhost:4173"],
+    methods: ["POST", "GET", "UPDATE", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/product", productRouter);
