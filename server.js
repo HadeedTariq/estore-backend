@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL, "http://localhost:4173"],
+    origin: ["https://estore-frontend.vercel.app", "http://localhost:4173"],
     methods: ["POST", "GET", "UPDATE", "DELETE"],
     credentials: true,
   })
